@@ -1,0 +1,30 @@
+.flip-list-move {
+  transition: transform .5s;
+}
+
+.list_test-wrap {
+  list-style:  none;  /* デフォルトのアイコンを消す */
+  margin:  0;         /* デフォルト指定上書き */
+  padding: 0;         /* デフォルト指定上書き */
+}
+
+.list_test:before {
+  content:  "";     /* 空の要素作成 */
+  width: 20px;                /* 幅指定 */
+  height: 20px;               /* 高さ指定 */
+  display:  inline-block;     /* インラインブロックにする */
+  background-color: #181802;  /* 背景色指定 */
+  position:  relative;        /* 位置調整 */
+  top: 3px;                   /* 位置指定 */
+  border-radius:  50%;        /* 要素を丸くする */
+  margin-right: 5px;          /* 余白指定 */
+}
+
+.list_test {
+  padding:  10px;             /* 余白指定 */
+  background-color:  #8f8f8f; /* 背景色指定 */
+  border-radius:  10px;       /* 角丸指定 */
+  margin-bottom: 5px;         /* 要素と要素の間指定 */
+  color: #000;                /* 文字色指定 */
+  font-size:  20px;           /* 文字サイズ指定 */
+}

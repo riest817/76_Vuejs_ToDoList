@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>ToDoList</title>
+</head>
+<body>
+  <h1>ToDoリスト</h1>
+  <div id="app">
+    <div id="add_plan">
+      <form @submit.prevent="add_List">
+        <input type="text" v-model="newList.name" size="30" maxlength="20">
+        <input type="submit" value="追加">
+      </form>
+    </div>
+    <button v-on:click="shuffle">シャッフル</button>
+    <!-- <button v-on:click="All_delete">全削除</button> -->
+      <transition-group name="flip-list" tag="ul" class="list_test-wrap">
+        <li v-for="(List, index) in Lists" v-bind:key="List.name" class="list_test"> 
+          {{ List.name }}
+          <button @click="delete_List(index)">削除</button>
+        </li>
+      </transition-group>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
