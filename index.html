@@ -11,16 +11,26 @@
   <div id="app">
     <div id="add_plan">
       <form @submit.prevent="add_List">
-        <input type="text" v-model="newList.name" size="30" maxlength="20">
+        内容：<input type="text" v-model="newList.name" size="30" maxlength="20">
+        優先度：
+        <select name="status_select" v-model="newList.status">
+          <option value='低'>低</option>
+          <option value='中'>中</option>
+          <option value='高'>高</option>
+          <option value='緊急'>緊急</option>
+          </select>
         <input type="submit" value="追加">
       </form>
     </div>
-    <button v-on:click="shuffle">シャッフル</button>
+    <button @click="shuffle">シャッフル</button>
+    <button @click="All_delete">全削除</button>
     <!-- <button v-on:click="All_delete">全削除</button> -->
       <transition-group name="flip-list" tag="ul" class="list_test-wrap">
-        <li v-for="(List, index) in Lists" v-bind:key="List.name" class="list_test"> 
-          {{ List.name }}
-          <button @click="delete_List(index)">削除</button>
+        <li v-for="(List, index) in Lists" v-bind:key="List.name" class="list_test" v-bind:style="{background: List.bgColor}"> 
+          <button @click="delete_List(index)" class="btn-delete">×</button>
+          <button @click="edit_List(index)" class="btn-edit">編集</button>
+          <p>ID:{{ List.id }}&emsp;優先度:{{ List.status }}</p>     
+          <p>内容：{{ List.name }}</p>
         </li>
       </transition-group>
     </ul>

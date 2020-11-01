@@ -8,23 +8,69 @@
   padding: 0;         /* デフォルト指定上書き */
 }
 
-.list_test:before {
-  content:  "";     /* 空の要素作成 */
-  width: 20px;                /* 幅指定 */
-  height: 20px;               /* 高さ指定 */
-  display:  inline-block;     /* インラインブロックにする */
-  background-color: #181802;  /* 背景色指定 */
-  position:  relative;        /* 位置調整 */
-  top: 3px;                   /* 位置指定 */
-  border-radius:  50%;        /* 要素を丸くする */
-  margin-right: 5px;          /* 余白指定 */
-}
-
 .list_test {
-  padding:  10px;             /* 余白指定 */
+  padding:  5px;             /* 余白指定 */
   background-color:  #8f8f8f; /* 背景色指定 */
   border-radius:  10px;       /* 角丸指定 */
   margin-bottom: 5px;         /* 要素と要素の間指定 */
   color: #000;                /* 文字色指定 */
   font-size:  20px;           /* 文字サイズ指定 */
+}
+
+.list_test p {
+  padding:  1px;             /* 余白指定 */
+  margin-bottom: 1px;         /* 要素と要素の間指定 */
+  line-height: 0.5em;       /* 行間 */
+}
+
+.btn-delete {
+  display: inline-block;
+  position: relative;
+  float: right;
+  text-decoration: none;
+  color: #090808;
+  font-size: 1em;
+  width: 30px;
+  height: 20px;
+  line-height: 0;
+  border-radius: 5px;
+  text-align: unset;
+  overflow: hidden;
+  font-weight: bold;
+  background: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+.btn-delete:active {
+  /*押したとき*/
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);/*沈むように*/
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(#000000 0%, #ffbcbc 100%);/*グラデーションを明るく*/
+}
+
+.btn-edit {
+  display: inline-block;
+  position: relative;
+  float: right;
+  text-decoration: none;
+  color: #090808;
+  font-size: 0.3em;
+  width: 36px;
+  height: 20px;
+  line-height: 0;
+  border-radius: 5px;
+  text-align: unset;
+  overflow: hidden;
+  font-weight: bold;
+  background: linear-gradient(#aaeeff 0%, #aaeeff 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+.btn-edit:active {
+  /*押したとき*/
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);/*沈むように*/
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(#000000 0%, #aaeeff 100%);/*グラデーションを明るく*/
 }
