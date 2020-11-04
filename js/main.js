@@ -28,8 +28,8 @@ var app = new Vue({
         this.Lists.splice(this.editNum, 1, this.newList); 
         this.newList = {};
         this.editNum = -1;
-        submit.value = "追加";
-        submit.style.backgroundColor = "white";
+        submit.value = "追加";  // DOMを直接を操作
+        submit.style.backgroundColor = "white"; //DOM
       }
     },
     delete_List: function(index) {
@@ -38,12 +38,12 @@ var app = new Vue({
     edit_List: function(index) {
       this.editNum = index;
       console.log(this.editNum);
-      document.getElementById( "content" ).value = this.Lists[this.editNum]['name'];
-      document.getElementById( "status" ).value = this.Lists[this.editNum]['status'];
+      document.getElementById( "content" ).value = this.Lists[this.editNum]['name'];  // DOM操作は禁じ手
+      document.getElementById( "status" ).value = this.Lists[this.editNum]['status']; // 同様
       this.newList['name'] = this.Lists[this.editNum]['name'];
       this.newList['status'] = this.Lists[this.editNum]['status'];
-      submit.value = "編集完了";
-      submit.style.backgroundColor = "lightblue";
+      submit.value = "編集完了";    //DOM
+      submit.style.backgroundColor = "lightblue"; // DOM
       //this.add_List();
     },
     All_delete: function() {
